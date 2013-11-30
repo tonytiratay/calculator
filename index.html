@@ -21,19 +21,7 @@
           <ul class="right">
               <li class="has-dropdown" ><a href="#" style="padding-left:200px;">Options</a>
               <ul class="dropdown">
-                <li class="has-form"> 
-                <div class="row collapse"> 
-                <div class="large-12 small-12 columns"> 
-                <input type="text" id="valtva" placeholder="Valeur TVA (défaut 19.6)"> 
-                </div> 
-                <div class="large-12 small-12 columns"> 
-                <input type="text" id="valtauxhoraire" placeholder="Taux horaire net (défaut 25)"> 
-                </div>
-                <div class="large-12 small-12 columns"> 
-                <input type="text" id="valchargesupp" placeholder="Charges supp (défaut 10%)"> 
-                </div>  
-                </div> 
-                </li>
+                <li>  </li>
               </ul>
               </li>
           </ul>
@@ -43,7 +31,23 @@
 
 <!-- _________________________FORMULAIRE_________________________________________-->
 <br/><br/><br/><br/>
+
 <div class="container"><img src="img/gear-light.png" class="tool" alt=""><h1>Super Calculator</h1>
+    
+    <div class="row switch">
+<div class="large-4 small-12 columns"> 
+<input type="text" id="valtva" placeholder="Valeur TVA (défaut 19.6)"> 
+</div> 
+<div class="large-4 small-12 columns"> 
+<input type="text" id="valtauxhoraire" placeholder="Taux horaire net (défaut 25)"> 
+</div>
+<div class="large-4 small-12 columns"> 
+<input type="text" id="valchargesupp" placeholder="Charges supp (défaut 10%)"> 
+</div>  
+</div>
+
+
+
     <div class="row">
         <div id="box-ht">
             <div class=" large-2 small-12 columns titre">HT</div>
@@ -75,11 +79,49 @@
 
 
     <div class="resultat">Entrer une valeur pour lancer le simulateur</div><br/><br/>
-    <a href="#" class="button large expand">J'en veux plus</a>
+    <a href="#" data-reveal-id="myModal" class="button large expand">J'en veux plus</a>
 
 
 
 </div>
+
+
+
+<!-- _______________________________________________modal________________________________________-->
+
+
+
+<div id="myModal" class="reveal-modal" data-reveal> 
+<div class="row">
+        <div id="box-ht">
+            <div class=" large-2 small-12 columns titre">HT</div>
+            <div class ="large-10 small-12 columns" ><input type="text" id="valht" placeholder="100"></div>
+        </div>
+    </div>
+
+     <div class="row">       
+        <div id="box-ttc">
+            <div class="large-2 small-12 columns titre">TTC</div>
+            <div class ="large-10 small-12 columns"><input type="text" id="valttc" placeholder="0"></div>
+        </div>
+      </div>
+
+      <div class="row">       
+        <div id="box-capital">
+            <div class="large-2 small-12 columns titre">Capital</div>
+            <div class ="large-10 small-12 columns"><input type="text" id="capital" placeholder="0"></div>
+        </div>
+      </div>
+
+      <div class="row">       
+        <div id="box-capital">
+            <div class="large-2 small-12 columns titre">Salaire <br/><small>1 mois</small></div>
+            <div class ="large-10 small-12 columns"><input type="text" id="sal1" placeholder="0"></div>
+        </div>
+      </div>
+
+
+ <a class="close-reveal-modal">&#215;</a> </div>
 
 
 <!-- _________________________APPEL SCRIPTS_________________________________________-->
