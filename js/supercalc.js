@@ -4,6 +4,11 @@ tauxhoraire = 25;
 chargessupp = 10;
 
 
+$( ".switch" ).slideToggle( "slow", function() {
+});
+$( ".switch-more" ).slideToggle( "slow", function() {
+});
+
 // _________________________________________________________________A partir de HT
 
 var fromHt = function htToResults(val) {
@@ -76,7 +81,15 @@ var getResult = function extractResult(param,id){ // param = Une valeur à utili
 	return (fromHt(param)[id]);
 }
 
+$( "#togglebutton" ).click(function() {
+$( ".switch" ).slideToggle( "slow", function() {
+});
+});
 
+$( "#togglebuttonmore" ).click(function() {
+$( ".switch-more" ).slideToggle( "slow", function() {
+});
+});
 
 
 
