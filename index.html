@@ -11,15 +11,6 @@
   <body>
 
 
-
-
-   
-
-<div class="container">
-<div style="margin-top:90px" id="séparationhaut"></div>
-
-
-
 <!-- _________________________MENU_________________________________________-->      
     <div class="contain-to-grid fixed">
     <nav class="top-bar" data-topbar> 
@@ -37,7 +28,10 @@
                 </div> 
                 <div class="large-12 small-12 columns"> 
                 <input type="text" id="valtauxhoraire" placeholder="Taux horaire (défaut 40€)"> 
-                </div> 
+                </div>
+                <div class="large-12 small-12 columns"> 
+                <input type="text" id="valchargescoop" placeholder="Charges supp (défaut 10%)"> 
+                </div>  
                 </div> 
                 </li>
               </ul>
@@ -49,11 +43,11 @@
 
 <!-- _________________________FORMULAIRE_________________________________________-->
 
-
+<div class="container"><h1>Super Calculator</h1>
     <div class="row">
         <div id="box-ht">
             <div class=" large-2 small-2 columns titre">HT</div>
-            <div class ="large-10 small-10 columns" ><input type="text" id="valht" placeholder="0"></div>
+            <div class ="large-10 small-10 columns" ><input type="text" id="valht" placeholder="100"></div>
         </div>
     </div>
 
@@ -64,7 +58,7 @@
         </div>
       </div>
 
-
+    <div class="resultat"></div>
 
 
 

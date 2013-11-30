@@ -1,13 +1,31 @@
 
 body {
 
-	background: #FFF3DD;
+	background: url(../img/handmadepaper.png);
 }
 
-.container {
-	
-	padding: 5px;
+.top-bar {
 
+}
+
+
+
+.container {
+	max-width: 960px;
+	width: 95%;
+	margin-top: 170px;
+	margin:auto;
+	padding: 50px 100px 150px 100px;
+	background: #fff;
+	-webkit-box-shadow:  0px 0px 10px 10px rgba(0, 0, 0, 0.07);
+    box-shadow:  0px 0px 10px 10px rgba(0, 0, 0, 0.07);
+    -webkit-border-radius: 0px 20px 0px 20px;
+    border-radius: 0px 20px 0px 20px;
+
+}
+
+.container h1 {
+	margin-bottom: 100px;
 }
 
 .titre {
@@ -16,4 +34,15 @@ body {
 	line-height: 1.5em;
 	text-transform: uppercase;
 	margin-top: 5px;
+	color: #333333;
+	text-shadow: px px px #000000;
+    filter: dropshadow(color=#000000, offx=, offy=);
+}
+
+.resultat {
+
+	text-align: center;
+	font-size: 1.3em;
+	line-height: 1.7em;
+	
 }
