@@ -1,7 +1,14 @@
 .container {
 	
 	background: #FFF3DD;
-	margin-top: 200px;
-	padding: 20px;
+	padding: 5px;
 
+}
+
+.titre {
+	text-align: center;
+	font-size: 1.1em;
+	line-height: 1.5em;
+	text-transform: uppercase;
+	margin-top: 5px;
 }

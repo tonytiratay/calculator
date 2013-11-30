@@ -4,11 +4,22 @@ $(document).ready(function() {
     var ttc = 0
 
     $("#valht").on("keyup change", function() {
-   ttc = this.value; 
-   newttc = ttc + ttc * (tva / 100);
-   ttc = newttc
-   $("#valttc").attr("placeholder", ttc);
-});
+  	  ht = this.value; 
+      ttc = ht * (1 + (tva / 100));
+      $("#valttc").val(ttc.toFixed(2));
+      });
+
+    $("#valttc").on("keyup change", function() {
+  	  ttc = this.value; 
+      ht = ttc - ttc * (tva / 100);
+      $("#valht").val(ht.toFixed(2));
+      });
+
+
+
+
+
+
 
 });
 
