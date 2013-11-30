@@ -15,17 +15,34 @@
      
       <div class="class large-12 small-12 centered columns container">
         <div class="row">
-            <div class="small-10 columns">
-                <input type="text" placeholder="Hex Value">
+
+
+            <div id="box-ht">
+            <div class=" small-2 columns">
+                <label class="small-2">HT</label>
             </div>
+            <div class ="small-10" >
+                <input type="text" id="valht" placeholder="0">
+            </div>
+            </div>
+            
+            <div id="box-ttc">
             <div class="small-2 columns">
-                <a href="#" class="button postfix">Go</a>
+                <label class="small-2">TTC</label>
             </div>
-            <div class="large-4 columns">
-                <label>Input Label</label>
-                <input type="text" placeholder="large-4.columns" />
+            <div class ="small-10" >
+                <input type="text" id="valttc" placeholder="0">
             </div>
-      </div>
+            </div>
+
+        
+
+
+
+
+
+
+        </div>
 
 
 
@@ -33,6 +50,7 @@
    </div>
     
     <script src="js/jquery.js"></script>
+    <script src="js/calculator.js"></script>
     <script src="js/foundation.min.js"></script>
     <script>
       $(document).foundation();
