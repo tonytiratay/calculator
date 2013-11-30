@@ -14,7 +14,7 @@ $(document).ready(function() {
       })
 
     $("#valtauxhoraire").on("keyup change", function() {
-      $(".resultat").text("Soit " + (ht / valtauxhoraire) + " heures travaillées pour " + valtauxhoraire + "€ de l'heure.");
+      $(".resultat").text("Soit " + (ht / valtauxhoraire).parseInt(2) + " heures travaillées pour " + valtauxhoraire + "€ de l'heure.");
   	  valtauxhoraire = this.value;
       })
 
@@ -35,6 +35,15 @@ $(document).ready(function() {
   	  ttc = this.value; 
       ht = ttc - ttc * (tva / 100);
       $("#valht").val(ht.toFixed(2));
+      $(".resultat").text("Soit " + (ht / valtauxhoraire) + " heures travaillées pour " + valtauxhoraire + "€ de l'heure.");
+      })
+
+    $("#capital").on("keyup change", function() {
+  	  capital = this.value; 
+      ht = 10 * capital / 9;
+      ttc = ht * (1 + (tva / 100));
+      $("#valht").val(ht.toFixed(2));
+      $("#valttc").val(ttc.toFixed(2));
       $(".resultat").text("Soit " + (ht / valtauxhoraire) + " heures travaillées pour " + valtauxhoraire + "€ de l'heure.");
       })
 

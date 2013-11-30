@@ -35,7 +35,7 @@ body {
 	text-transform: uppercase;
 	margin-top: 5px;
 	color: #333333;
-	text-shadow: px px px #000000;
+	text-shadow: 1px 1px 1px #000000;
     filter: dropshadow(color=#000000, offx=, offy=);
 }
 
@@ -44,5 +44,5 @@ body {
 	text-align: center;
 	font-size: 1.3em;
 	line-height: 1.7em;
-	
+
 }
