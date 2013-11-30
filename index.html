@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation | Welcome</title>
+    <title>CAWA | Calculator</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/custom.css" />
     <script src="js/modernizr.js"></script>
@@ -15,7 +15,7 @@
     <div class="contain-to-grid fixed">
     <nav class="top-bar" data-topbar> 
       <ul class="title-area"> 
-        <li class="name"> <h1><a href="#">Super Calculator</a></h1> </li> 
+        <li class="name"> <h1><a href="#">CAWA TOOLS</a></h1> </li> 
       </ul> 
       <section class="top-bar-section">
           <ul class="right">
@@ -27,7 +27,7 @@
                 <input type="text" id="valtva" placeholder="Valeur TVA (défaut 19.6)"> 
                 </div> 
                 <div class="large-12 small-12 columns"> 
-                <input type="text" id="valtauxhoraire" placeholder="Taux horaire (défaut 40€)"> 
+                <input type="text" id="valtauxhoraire" placeholder="Taux horaire net (défaut 25)"> 
                 </div>
                 <div class="large-12 small-12 columns"> 
                 <input type="text" id="valchargesupp" placeholder="Charges supp (défaut 10%)"> 
@@ -42,33 +42,40 @@
     </div><br/>
 
 <!-- _________________________FORMULAIRE_________________________________________-->
-
-<div class="container"><h1>Super Calculator</h1>
+<br/><br/><br/><br/>
+<div class="container"><img src="img/gear-light.png" class="tool" alt=""><h1>Super Calculator</h1>
     <div class="row">
         <div id="box-ht">
-            <div class=" large-2 small-2 columns titre">HT</div>
-            <div class ="large-10 small-10 columns" ><input type="text" id="valht" placeholder="100"></div>
+            <div class=" large-2 small-12 columns titre">HT</div>
+            <div class ="large-10 small-12 columns" ><input type="text" id="valht" placeholder="100"></div>
         </div>
     </div>
 
      <div class="row">       
         <div id="box-ttc">
-            <div class="large-2 small-2 columns titre">TTC</div>
-            <div class ="large-10 small-10 columns"><input type="text" id="valttc" placeholder="0"></div>
+            <div class="large-2 small-12 columns titre">TTC</div>
+            <div class ="large-10 small-12 columns"><input type="text" id="valttc" placeholder="0"></div>
         </div>
       </div>
 
       <div class="row">       
         <div id="box-capital">
-            <div class="large-2 small-2 columns titre">Capital</div>
-            <div class ="large-10 small-10 columns"><input type="text" id="capital" placeholder="0"></div>
+            <div class="large-2 small-12 columns titre">Capital</div>
+            <div class ="large-10 small-12 columns"><input type="text" id="capital" placeholder="0"></div>
+        </div>
+      </div>
+
+      <div class="row">       
+        <div id="box-capital">
+            <div class="large-2 small-12 columns titre">Salaire <br/><small>1 mois</small></div>
+            <div class ="large-10 small-12 columns"><input type="text" id="sal1" placeholder="0"></div>
         </div>
       </div>
 
 
 
-
-    <div class="resultat"></div>
+    <div class="resultat">Entrer une valeur pour lancer le simulateur</div><br/><br/>
+    <a href="#" class="button large expand">J'en veux plus</a>
 
 
 

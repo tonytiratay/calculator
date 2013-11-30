@@ -1,32 +1,58 @@
 
 body {
 
-	background: url(../img/handmadepaper.png);
+	background: url(../img/binding_dark.png);
+	background: #FFA100;
 }
 
 .top-bar {
 
 }
 
-
+.button {text-align: center;}
 
 .container {
 	max-width: 960px;
 	width: 95%;
-	margin-top: 170px;
+	margin-top: 280px;
 	margin:auto;
-	padding: 50px 100px 150px 100px;
-	background: #fff;
-	-webkit-box-shadow:  0px 0px 10px 10px rgba(0, 0, 0, 0.07);
-    box-shadow:  0px 0px 10px 10px rgba(0, 0, 0, 0.07);
-    -webkit-border-radius: 0px 20px 0px 20px;
-    border-radius: 0px 20px 0px 20px;
+	padding: 50px 10px 50px 10px;
+	background: #F3F3F3;
+    border: 1px solid #B7B7B7;
 
+}
+
+.tool {
+	z-index: 0;
+	position: absolute;
+	background: url(img/gear-light.png);
+	width: 110px;
+	height: 110px;
+	padding: 20px;
+	margin-top: -50px;
+}
+
+.name h1 a{
+	margin-top: 6px;
+	font-size: 1.7em;
 }
 
 .container h1 {
-	margin-bottom: 100px;
+	z-index: 200;
+	margin-bottom: 20px;
+	width: 100%;
+    text-align: center;
+    display: block;
+    padding: 4px;
+    color: #CDCDCD;
+    border-bottom: 1px solid #CDCDCD;
 }
+
+hr {
+	clear: both;
+}
+
+
 
 .titre {
 	text-align: center;
@@ -35,8 +61,7 @@ body {
 	text-transform: uppercase;
 	margin-top: 5px;
 	color: #333333;
-	text-shadow: 1px 1px 1px #000000;
-    filter: dropshadow(color=#000000, offx=, offy=);
+	
 }
 
 .resultat {
@@ -46,3 +71,33 @@ body {
 	line-height: 1.7em;
 
 }
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background-color: white;
+  font-family: inherit;
+  border: 1px solid #cccccc;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.75);
+  display: block;
+  font-size: 1.2rem;
+  margin: 0 0 1rem 0;
+  padding: 0.9rem;
+  height: 3.1rem;
+  width: 100%;

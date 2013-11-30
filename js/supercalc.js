@@ -1,25 +1,10 @@
 $(document).ready(function() {
-alert(1);
-var tva = 19.6;
-var tauxhoraire = 40;
-var chargessupp = 10;
+tva = 19.6;
+tauxhoraire = 25;
+chargessupp = 10;
 
-// Récupération options
 
-    $("#valtva").on("keyup change", function() {
-  	  tva = this.value; 
-      })
-
-    $("#valtauxhoraire").on("keyup change", function() {
-      $(".resultat").text("Soit " + (ht / valtauxhoraire).parseInt(2) + " heures travaillées pour " + valtauxhoraire + "€ de l'heure.");
-  	  tauxhoraire = this.value;
-      })
-
-    $("#valchargesupp").on("keyup change", function() {
-  	  chargessupp = this.value; 
-      })
-
-// A partir de HT
+// _________________________________________________________________A partir de HT
 
 var fromHt = function htToResults(val) {
 	var ht = val;
@@ -30,16 +15,16 @@ var fromHt = function htToResults(val) {
 	var salaire1 = capital / 1.82;
 	var charges_sal = salaire1 * 0.28;
 	var charges_pat = salaire1 * 0.54;
-	var heures_travail = ht / tauxhoraire;
+	var heures_travail = salaire1 / tauxhoraire;
 	var resultats = [ht,ttc,val_tva,val_charges_supp,capital,salaire1,charges_sal,charges_pat,heures_travail];
 	return resultats;
 }
 
-// Fonctions de conversions 
+// __________________________________________________________________Fonctions de conversions 
 
 var fromTtc = function ttcToResults(ttc) {
 	ht = ttc - ttx * (tva/100);
-	return htToResults(ht);
+	return ht;
 	}
 
 var fromTva = function tvaToResults(val_tva) {
@@ -78,32 +63,54 @@ var fromSal = function salToResults(salaire,mois) {
 	return htToResults(ht);
 	}
 
-// Système
+//__________________________________________________________________________Système
+
+var rounded = function(value){ // Arrondi automatiquement chaque élément de l'array a x chiffres après la virgule
+
+		result = Math.round(2).toFixed(value);
+		
+}
 
 
-var getResult = function extractResult(param,id){
+var getResult = function extractResult(param,id){ // param = Une valeur à utiliser pour le HT, et l'id de l'élément à extraire de la liste de résultats
 	return (fromHt(param)[id]);
 }
 
-var arrondir = function(element,arrondi){
-	$.each(element, function(i,v) {
-		Math.round(number).toFixed(arrondi);
-	})
 
-		return arrondi;
-}
 
- 
 
-    // Calculs Formulaire
-    //Resultats  ht: 0 / ttc: 1 / val_tva: 2 / val_charges_supp: 3 / capital: 4 / salaire1: 5 / charges_sal:6 / charges_pat:7 / heures_travail: 8
+
+// ___________________________________________________________________________Calculs Formulaire
+    
+//Resultats  ht: 0 / ttc: 1 / val_tva: 2 / val_charges_supp: 3 / capital: 4 / salaire1: 5 / charges_sal:6 / charges_pat:7 / heures_travail: 8
 
     $("#valht").on("keyup change", function() {
-  	  var param = this.value; 
-      $("#valttc").val(getResult(param,1));
-      $(".resultat").text("Soit " + getResult(param,8) + " heures travaillées pour " + tauxhoraire + "€ de l'heure.");
+  	  var param = this.value;
+      $("#valttc").val(getResult(param,1).toFixed(2));
+      $("#capital").val(getResult(param,4).toFixed(2));
+      $("#sal1").val(getResult(param,5).toFixed(2));
+      $(".resultat").text("Soit " + (getResult(param,8).toFixed(2)) + " heures travaillées pour " + tauxhoraire + "€ (net) de l'heure.");
       })
 
+
+
+
+// ______________________________________________________________Récupération options
+
+    $("#valtva").on("keyup change", function() {
+  	  tva = this.value; 
+      })
+
+    $("#valtauxhoraire").on("keyup change", function() {
+      $(".resultat").text("Soit " + (ht / tauxhoraire).parseInt(2) + " heures travaillées pour " + tauxhoraire + "€ (net) de l'heure.");
+  	  tauxhoraire = this.value;
+      })
+
+    $("#valchargesupp").on("keyup change", function() {
+  	  chargessupp = this.value; 
+      })
+
+ 
 
 
 });
