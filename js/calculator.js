@@ -3,6 +3,14 @@ $(document).ready(function() {
     var ht = 0
     var ttc = 0
 
+    $("#valtva").on("keyup change", function() {
+  	  tva = this.value; 
+      });
+
+    $("#valauxhoraire").on("keyup change", function() {
+  	  tva = this.value; 
+      });
+
     $("#valht").on("keyup change", function() {
   	  ht = this.value; 
       ttc = ht * (1 + (tva / 100));

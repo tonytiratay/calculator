@@ -1465,8 +1465,8 @@ meta.foundation-mq-topbar {
 
 .top-bar {
   overflow: hidden;
-  height: 45px;
-  line-height: 45px;
+  height: 55px;
+  line-height: 55px;
   position: relative;
   background: #333333;
   margin-bottom: 0; }
@@ -4066,8 +4066,8 @@ textarea {
   display: block;
   font-size: 0.875rem;
   margin: 0 0 1rem 0;
-  padding: 0.5rem;
-  height: 2.3125rem;
+  padding: 0.9rem;
+  height: 2.8125rem;
   width: 100%;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
