@@ -1,17 +1,23 @@
 $(document).ready(function() {
+
+// _______________________________________________________Initialise les variables par défaut
+
 tva = 19.6;
 tauxhoraire = 25;
 chargessupp = 10;
 
 
-$( ".switch" ).slideToggle( "slow", function() {
+//__________________________________________________________________Ferme les options
+
+
+$( ".switch" ).slideToggle( "fast", function() {
 });
-$( ".switch-more" ).slideToggle( "slow", function() {
+$( ".switch-more" ).slideToggle( "fast", function() {
 });
 
-// _________________________________________________________________A partir de HT
+// ____________________________________________________________________A partir de HT
 
-var fromHt = function htToResults(val) {
+var fromHt = function(val) {
 	var ht = val;
 	var ttc = ht * (1 + (tva / 100));
 	var val_tva = ttc - ht;
@@ -27,14 +33,14 @@ var fromHt = function htToResults(val) {
 
 // __________________________________________________________________Fonctions de conversions 
 
-var fromTtc = function ttcToResults(ttc) {
-	ht = ttc - ttx * (tva/100);
+var fromTtc = function(ttc) {
+	ht = ttc * (100 / (100 + tva));
 	return ht;
 	}
 
 var fromTva = function tvaToResults(val_tva) {
 	ttc = 100 * val_tva / 100;
-	ht = ttc - ttx * (tva/100);
+	ht = ttc - ttc * (tva/100);
 	return htToResults(ht);
 	}
 
@@ -81,13 +87,13 @@ var getResult = function extractResult(param,id){ // param = Une valeur à utili
 	return (fromHt(param)[id]);
 }
 
-$( "#togglebutton" ).click(function() {
-$( ".switch" ).slideToggle( "slow", function() {
+$( "#togglebutton" ).click(function() { // Ouvre et ferme les fonctions avancées
+$( ".switch" ).slideToggle( "fast", function() {
 });
 });
 
-$( "#togglebuttonmore" ).click(function() {
-$( ".switch-more" ).slideToggle( "slow", function() {
+$( "#togglebuttonmore" ).click(function() {// Ouvre et ferme les infos supplémentaires
+$( ".switch-more" ).slideToggle( "fast", function() {
 });
 });
 
@@ -105,10 +111,16 @@ $( ".switch-more" ).slideToggle( "slow", function() {
       $(".resultat").text("Soit " + (getResult(param,8).toFixed(2)) + " heures travaillées pour " + tauxhoraire + "€ (net) de l'heure.");
       })
 
+    $("#valttc").on("keyup change", function() {
+  	  var param = fromTtc(this.value);
+      $("#valht").val(getResult(param,0).toFixed(2));
+      $("#capital").val(getResult(param,4).toFixed(2));
+      $("#sal1").val(getResult(param,5).toFixed(2));
+      $(".resultat").text("Soit " + (getResult(param,8).toFixed(2)) + " heures travaillées pour " + tauxhoraire + "€ (net) de l'heure.");
+      })
 
 
-
-// ______________________________________________________________Récupération options
+// ______________________________________________________________Récupération des valeurs d'options
 
     $("#valtva").on("keyup change", function() {
   	  tva = this.value; 
