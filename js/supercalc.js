@@ -5,6 +5,7 @@ $(document).ready(function() {
 tva = 19.6;
 tauxhoraire = 25;
 chargessupp = 10;
+moispardefaut = 1;
 
 
 //__________________________________________________________________Ferme les options
@@ -38,40 +39,40 @@ var fromTtc = function(ttc) {
 	return ht;
 	}
 
-var fromTva = function tvaToResults(val_tva) {
+var fromTva = function(val_tva) {
 	ttc = 100 * val_tva / 100;
 	ht = ttc - ttc * (tva/100);
-	return htToResults(ht);
+	return ht;
 	}
 
-var fromChargesSupp = function chargesSuppToResults(val_charges_coop) {
+var fromChargesSupp = function(val_charges_coop) {
 	ht = 10 * val_charges_coop;
-	return htToResults(ht);
+	return ht;
 	}
 
-var fromCapital = function capitalToResults(capital) {
+var fromCapital = function(capital) {
 	ht = chargessupp * capital / 9;
-	return htToResults(ht);
+	return ht;
 	}
 
-var fromChargesSal = function chargesSalToResults(charge) {
+var fromChargesSal = function(charge) {
 	salaire = charge / 0.28;
 	capital = 1.82 * salaire;
 	ht = chargessupp * capital / 9;
-	return htToResults(ht);
+	return ht;
 	}
 
-var fromChargesPat = function chargespatToResults(charge) {
+var fromChargesPat = function(charge) {
 	salaire = charge / 0.54;
 	capital = 1.82 * salaire;
 	ht = chargessupp * capital / 9;
-	return htToResults(ht);
+	return ht;
 	}
 
-var fromSal = function salToResults(salaire,mois) {
-	capital = 1.82 * (salaire * mois);
+var fromSal = function(salaire,moispardefaut) {
+	capital = 1.82 * (salaire * moispardefaut);
 	ht = chargessupp * capital / 9;
-	return htToResults(ht);
+	return ht;
 	}
 
 //__________________________________________________________________________Système
@@ -83,7 +84,7 @@ var rounded = function(value){ // Arrondi automatiquement chaque élément de l'
 }
 
 
-var getResult = function extractResult(param,id){ // param = Une valeur à utiliser pour le HT, et l'id de l'élément à extraire de la liste de résultats
+var getResult = function(param,id){ // param = Une valeur à utiliser pour le HT, et l'id de l'élément à extraire de la liste de résultats
 	return (fromHt(param)[id]);
 }
 
@@ -118,6 +119,24 @@ $( ".switch-more" ).slideToggle( "fast", function() {
       $("#sal1").val(getResult(param,5).toFixed(2));
       $(".resultat").text("Soit " + (getResult(param,8).toFixed(2)) + " heures travaillées pour " + tauxhoraire + "€ (net) de l'heure.");
       })
+
+    $("#capital").on("keyup change", function() {
+  	  var param = fromCapital(this.value);
+      $("#valht").val(getResult(param,0).toFixed(2));
+      $("#valttc").val(getResult(param,1).toFixed(2));
+      $("#sal1").val(getResult(param,5).toFixed(2));
+      $(".resultat").text("Soit " + (getResult(param,8).toFixed(2)) + " heures travaillées pour " + tauxhoraire + "€ (net) de l'heure.");
+      })
+
+    $("#sal1").on("keyup change", function() {
+  	  var param = fromSal(this.value, moispardefaut);
+      $("#valht").val(getResult(param,0).toFixed(2));
+      $("#valttc").val(getResult(param,1).toFixed(2));
+      $("#capital").val(getResult(param,4).toFixed(2));
+      $(".resultat").text("Soit " + (getResult(param,8).toFixed(2)) + " heures travaillées pour " + tauxhoraire + "€ (net) de l'heure.");
+      })
+
+
 
 
 // ______________________________________________________________Récupération des valeurs d'options
