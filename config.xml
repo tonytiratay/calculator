@@ -17,8 +17,8 @@
        Tony Tiratay
     </author>
 
-    <preference name="orienation" value="portrait" />
-    <preference name="splash-screen-duration" value="2500"/> 
+    <preference name="orientation" value="portrait" />
+    <preference name="splash-screen-duration" value="9000"/> 
     <icon src="icon.png" />
     <gap:splash src="splash.png" />
 
