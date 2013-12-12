@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="fr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,14 +11,6 @@
   <body>
 
 
-<!-- _________________________MENU_________________________________________   
-    <div class="contain-to-grid fixed">
-    <nav class="top-bar" data-topbar> 
-      <ul class="title-area"> 
-        <li class="name"> <h1><a href="#">CAWA TOOLS</a></h1> </li> 
-      </ul> 
-    </nav>
-    </div><br/>-->   
 
 <!-- _________________________FORMULAIRE_________________________________________-->
 
@@ -32,27 +24,27 @@
 <div class="row switch">
 
 <div class="large-4 small-12 columns"> 
-<input type="text" id="valtva" placeholder="Valeur TVA"> 
+<input type="text" id="paramstva" placeholder="Valeur TVA"> 
 </div> 
 
 <div class="large-4 small-12 columns"> 
-<input type="text" id="valtauxhoraire" placeholder="Taux horaire (net)"> 
+<input type="text" id="paramstauxhoraire" placeholder="Taux horaire (net)"> 
 </div>
 
 <div class="large-4 small-12 columns"> 
-<input type="text" id="valchargesupp" placeholder="Charges supplémentaires (%)"> 
+<input type="text" id="paramschargecoop" placeholder="Charges supplémentaires (%)"> 
 </div>  
 
 <div class="large-4 small-12 columns"> 
-<input type="text" id="valchargespat" placeholder="Charges patronales"> 
+<input type="text" id="paramschargespat" placeholder="Charges patronales"> 
 </div>  
 
 <div class="large-4 small-12 columns"> 
-<input type="text" id="valchargesal" placeholder="Charges salariales"> 
+<input type="text" id="paramschargessal" placeholder="Charges salariales"> 
 </div>  
 
 <div class="large-4 small-12 columns"> 
-<input type="text" id="valheurestra" placeholder="Heures travaillées"> 
+<input type="text" id="paramsheurestravail" placeholder="Heures travaillées"> 
 </div>  
 
 <hr>
@@ -62,14 +54,14 @@
     <div class="row">
         <div id="box-ht">
             <div class=" large-2 small-12 columns titre">HT</div>
-            <div class ="large-10 small-12 columns" ><input type="text" id="valht" placeholder="Taper un montant"></div>
+            <div class ="large-10 small-12 columns" ><input type="text" id="ht" placeholder="Taper un montant"></div>
         </div>
     </div>
 
      <div class="row">       
         <div id="box-ttc">
             <div class="large-2 small-12 columns titre">TTC</div>
-            <div class ="large-10 small-12 columns"><input type="text" id="valttc" placeholder="Taper un montant"></div>
+            <div class ="large-10 small-12 columns"><input type="text" id="ttc" placeholder="Taper un montant"></div>
         </div>
       </div>
 
@@ -83,7 +75,7 @@
       <div class="row">       
         <div id="box-capital">
             <div class="large-2 small-12 columns titre">Salaire <br/><small>1 mois</small></div>
-            <div class ="large-10 small-12 columns"><input type="text" id="sal1" placeholder="Taper un montant"></div>
+            <div class ="large-10 small-12 columns"><input type="text" id="salaire" placeholder="Taper un montant"></div>
         </div>
       </div>
 
@@ -105,30 +97,30 @@
 <div class="switch-more"> 
   <hr>
     <div class="row">
-        <div id="box-ht">
-            <div class=" large-2 small-12 columns titre">HT</div>
-            <div class ="large-10 small-12 columns" ><input type="text" id="valht" placeholder="100"></div>
+        <div id="box-chargespat">
+            <div class=" large-2 small-12 columns titre">Charges patronnales</div>
+            <div class ="large-10 small-12 columns" ><input type="text" id="chargespat" placeholder="100"></div>
         </div>
     </div>
 
      <div class="row">       
-        <div id="box-ttc">
-            <div class="large-2 small-12 columns titre">TTC</div>
-            <div class ="large-10 small-12 columns"><input type="text" id="valttc" placeholder="0"></div>
+        <div id="box-chargessal">
+            <div class="large-2 small-12 columns titre">Charges salariales</div>
+            <div class ="large-10 small-12 columns"><input type="text" id="chargessal" placeholder="0"></div>
         </div>
       </div>
 
-      <div class="row">       
+      <!-- <div class="row">       
         <div id="box-capital">
             <div class="large-2 small-12 columns titre">Capital</div>
             <div class ="large-10 small-12 columns"><input type="text" id="capital" placeholder="0"></div>
         </div>
-      </div>
+      </div> -->
 
       <div class="row">       
-        <div id="box-capital">
-            <div class="large-2 small-12 columns titre">Salaire <br/><small>1 mois</small></div>
-            <div class ="large-10 small-12 columns"><input type="text" id="sal1" placeholder="0"></div>
+        <div id="box-tva">
+            <div class="large-2 small-12 columns titre">TVA <br/><small>1 mois</small></div>
+            <div class ="large-10 small-12 columns"><input type="text" id="tva" placeholder="0"></div>
         </div>
       </div>
 <hr>
@@ -147,7 +139,7 @@
 
 
     <script src="js/jquery.js"></script>
-    <script src="js/supercalc.js"></script>
+    <script src="js/calculator.js"></script>
     <!--<script src="js/calculator.js"></script>-->
     <script src="js/foundation.min.js"></script>
     <script>
