@@ -1,0 +1,85 @@
+html {
+	min-height: 100%;
+}
+
+body {
+
+	min-height: 100%;
+	background: url(../img/fond.jpg) no-repeat;
+	background-size: cover;
+	padding: 14px;
+
+	/*background: #4AB74E;*/
+}
+
+.top-bar {
+
+}
+
+.button {text-align: center;}
+
+.container {
+	max-width: 960px;
+	margin:auto;
+	padding: 0;
+	background: #F3F3F3;
+    border: 1px solid #B7B7B7;
+    -webkit-box-shadow:  0px 0px 15px 4px rgba(0, 0, 0, 0.3);
+    box-shadow:  0px 0px 15px 4px rgba(0, 0, 0, 0.3);
+    border: 3px solid #FFFFFF;
+
+}
+
+.tool {
+	z-index: 0;
+	position: absolute;
+	background: url(img/gear-light.png);
+	width: 110px;
+	height: 110px;
+	padding: 20px;
+	margin-top: -50px;
+}
+
+.name h1 a{
+	margin-top: 6px;
+	font-size: 1.7em;
+}
+
+.container h1 {
+	z-index: 200;
+	margin-bottom: 20px;
+	width: 100%;
+    text-align: center;
+    display: block;
+    padding: 4px;
+    color: #CDCDCD;
+    border-bottom: 1px solid #CDCDCD;
+}
+
+hr {
+	clear: both;
+}
+
+.swith-more {
+
+	background: #333;
+}
+
+
+.titre {
+	text-align: center;
+	font-size: 1.1em;
+	line-height: 1.5em;
+	text-transform: uppercase;
+	margin-top: 5px;
+	color: #333333;
+	
+}
+
+.resultat {
+
+	text-align: center;
+	font-size: 1.3em;
+	line-height: 1.7em;
+
+}
