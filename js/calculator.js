@@ -9,12 +9,12 @@ $( ".switch-more" ).slideToggle( "fast", function() {// AUTO Ouvre et ferme les 
 });
 
 $( "#togglebutton" ).click(function() { // Ouvre et ferme les fonctions avancées
-$( ".switch" ).slideToggle( "fast", function() {
+$( ".switch" ).slideToggle( "slow", function() {
 });
 });
 
 $( "#togglebuttonmore" ).click(function() {// Ouvre et ferme les infos supplémentaires
-$( ".switch-more" ).slideToggle( "fast", function() {
+$( ".switch-more" ).slideToggle( "slow", function() {
 });
 });
 
@@ -218,18 +218,16 @@ var fromsalaire = function(salaire) {
       $(".resultat").text("Soit " + (rounded(resultats.heurestravail)) + " heures travaillées pour " + params.tauxhoraire + "€ (net) de l'heure.");
       })
 
+ $("#paramtva").on("keyup change", function() {
+      val = this.value;
+      params.tva = (val);
+      
+      })
+
 //______________________________________Tests
 
-fromht(fromchargessal(900));
-console.log("Param Charges Sal: " + params.chargessal);
-console.log("ht: " + resultats.ht);
-console.log("ttc: " + resultats.ttc);
-console.log("capital: " + resultats.capital);
-console.log("salaire: " + resultats.salaire);
-console.log("charges salariales: " + resultats.chargessal);
-console.log("charges patronales: " + resultats.chargespat);
-console.log("total charges salaires: " + (resultats.chargessal + resultats.chargespat));
 
+console.log(params.tva);
 
 });
 
