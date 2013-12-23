@@ -19,8 +19,8 @@ $( ".switch-more" ).slideToggle( "slow", function() {
 });
 
 var rounded = function(value){ // Arrondi automatiquement chaque élément de l'array a x chiffres après la virgule
-
-    return value;//.toFixed(2)
+    return Math.round(value);
+    //return value;//.toFixed(2)
     
 }
 //________________________________Initialisation des variables et fonctions de calcul
@@ -106,8 +106,8 @@ var fromsalaire = function(salaire) {
       $("#paramschargescoop").val(rounded(params.chargescoop));
       $("#paramschargespat").val(rounded(params.chargespat));
       $("#paramschargessal").val(rounded(params.chargessal));
-      $//("#paramsheurestravail").val(rounded(resultats.heurestravail));      
-      $(".resultat").text("Soit " + (rounded(resultats.heurestravail)) + " heures travaillées pour " + params.tauxhoraire + "€ (net) de l'heure.");
+      $("#paramsheurestravail").val(rounded(resultats.heurestravail));      
+      $(".resultat").text("Soit " + (rounded(resultats.heurestravail)) + " heures travaillées pour " + rounded(params.tauxhoraire) + "€ (net) de l'heure.");
 })
  
 
@@ -183,6 +183,13 @@ var fromsalaire = function(salaire) {
  $("#paramstauxhoraire").on("keyup change", function() {
       params.tauxhoraire = this.value;
       fromht(resultats.ht);
+      $("#click").trigger("click");
+    })
+  $("#paramsheurestravail").on("keyup change", function() {
+      resultats.heurestravail = this.value;
+      params.tauxhoraire = resultats.salaire / resultats.heurestravail
+      fromht(resultats.ht);
+      resultats.heurestravail = this.value;
       $("#click").trigger("click");
     })
 

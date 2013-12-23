@@ -16,43 +16,54 @@
 <!-- _________________________FORMULAIRE_________________________________________-->
 
 <div class="show-for-medium-up" style ="height:90px;"></div>
-
 <div class="container">
 <div class="menu">
 <a href="#" id="togglebutton" class="button small secondary"><img src="img/options.png" width="30" height="30"></a>
 <h1>Super Calculator</h1>
-<button id="click" style="visibility:hidden;">GO</button>
+
 </div>
- 
+
 <div class="row switch">
-<div class="small-12 large-2 columns titre"><small>Valeur TVA</small></div>
-<div class="small-12 large-2 columns"> 
-<input type="number" id="paramstva" placeholder="Valeur TVA"> 
-</div> 
-<div class="small-12 large-2 columns titre"><small>Taux horaire</small></div>
-<div class="small-12 large-2 columns"> 
-<input type="number" id="paramstauxhoraire" placeholder="Taux horaire (net)"> 
-</div>
+<ul class="small-block-grid-3">
+  <li>
+    <small class="titre">Valeur TVA</small>
+    <div> 
+    <input type="number" id="paramstva" placeholder="Valeur TVA"> 
+    </div> 
+  </li>
+  <li>
+    <small class="titre">Taux horaire</small>
+    <div> 
+    <input type="number" id="paramstauxhoraire" placeholder="Taux horaire (net)"> 
+    </div> 
+  </li>
+  <li>
+    <small class="titre">Taux Cooperative</small>
+    <div> 
+    <input type="number" id="paramschargescoop" placeholder="Charges supplémentaires (%)"> 
+    </div> 
+  </li>
+  <li>
+    <small class="titre">Taux Ch.patronales</small>
+    <div> 
+    <input type="number" id="paramschargespat" placeholder="Charges patronales">
+    </div> 
+  </li>
+  <li>
+    <small class="titre">Taux Cha.salariales</small>
+    <div> 
+    <input type="number" id="paramschargessal" placeholder="Charges salariales"> 
+    </div> 
+  </li>
+  <li>
+    <small class="titre">Heures travaillées</small>
+    <div> 
+    <input type="number" id="paramsheurestravail" placeholder="Heures travaillées"> 
+    </div> 
+  </li>
+</ul>
+ 
 
-<div class="small-12 large-2 columns titre"><small>Taux Coopérative</small></div>
-<div class="small-12 large-2 columns"> 
-<input type="number" id="paramschargescoop" placeholder="Charges supplémentaires (%)"> 
-</div>  
-
-<div class="small-12 large-2 columns titre"><small>Taux Ch.patronales</small></div>
-<div class="small-12 large-2 columns"> 
-<input type="number" id="paramschargespat" placeholder="Charges patronales"> 
-</div>  
-
-<div class="small-12 large-2 columns titre"><small>Taux Cha.salariales</small></div>
-<div class="small-12 large-2 columns"> 
-<input type="number" id="paramschargessal" placeholder="Charges salariales"> 
-</div>  
-
-<div class="small-12 large-2 columns titre"><small>Heures travaillées</small></div>
-<div class="small-12 large-2 columns"> 
-<input type="number" id="paramsheurestravail" placeholder="Heures travaillées"> 
-</div>  
 
 </div>
 
@@ -89,6 +100,7 @@
       <a href="#" id="togglebuttonmore" class="button small secondary"><img src="img/plus.png" width="30" height="30"></a>
     <div class="resultat">Entrer une valeur pour lancer le simulateur</div><br/><br/>
     </div>
+
 
 
 
@@ -136,6 +148,7 @@
 
 
 </div> <!-- Fin div container -->
+<button id="click" style="visibility:hidden;">GO</button>
 
 
 <!-- _________________________APPEL SCRIPTS_________________________________________-->
