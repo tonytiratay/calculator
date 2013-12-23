@@ -39,7 +39,7 @@ var fromht = function(val) {
   resultats.ht = val;
   resultats.ttc = resultats.ht * (1 + (params.tva / 100));
   resultats.tva = resultats.ttc - resultats.ht;
-  resultats.valchargescoop = resultats.ht * 0.1;
+  resultats.valchargescoop = resultats.ht * (params.chargescoop/100);
   resultats.capital = resultats.ht - resultats.valchargescoop;
   resultats.salaire = resultats.capital / (1+(params.chargessal+params.chargespat)/100);
   resultats.chargessal = resultats.salaire * (params.chargessal / 100);
@@ -106,7 +106,7 @@ var fromsalaire = function(salaire) {
       $("#paramschargescoop").val(rounded(params.chargescoop));
       $("#paramschargespat").val(rounded(params.chargespat));
       $("#paramschargessal").val(rounded(params.chargessal));
-      $("#paramsheurestravail").val(rounded(resultats.heurestravail));      
+      $//("#paramsheurestravail").val(rounded(resultats.heurestravail));      
       $(".resultat").text("Soit " + (rounded(resultats.heurestravail)) + " heures travaillées pour " + params.tauxhoraire + "€ (net) de l'heure.");
 })
  
@@ -160,24 +160,31 @@ var fromsalaire = function(salaire) {
       $("#click").trigger("click");
     })
 
- $("#paramtva").on("keyup change", function() {
+ $("#paramstva").on("keyup change", function() {
       params.tva = this.value;
-      return params.tva;
       fromht(resultats.ht);
-      $("#ht").val(rounded(resultats.ht));
-      $("#ttc").val(rounded(resultats.ttc));
-      $("#capital").val(rounded(resultats.capital));
-      $("#salaire").val(rounded(resultats.salaire));
-      $("#chargespat").val(rounded(resultats.chargespat));
-      $("#chargessal").val(rounded(resultats.chargessal));
-      $("#tva").val(rounded(resultats.tva));
-      $("#paramstauxhoraire").val(rounded(params.tauxhoraire));
-      $("#paramschargescoop").val(rounded(params.chargescoop));
-      $("#paramschargespat").val(rounded(params.chargespat));
-      $("#paramschargessal").val(rounded(params.chargessal));
-      $("#paramsheurestravail").val(rounded(resultats.heurestravail));      
-      $(".resultat").text("Soit " + (rounded(resultats.heurestravail)) + " heures travaillées pour " + params.tauxhoraire + "€ (net) de l'heure.");
-      })
+      $("#click").trigger("click");
+    })
+ $("#paramschargessal").on("keyup change", function() {
+      params.chargessal = this.value;
+      fromht(resultats.ht);
+      $("#click").trigger("click");
+    })
+ $("#paramschargespat").on("keyup change", function() {
+      params.chargespat = this.value;
+      fromht(resultats.ht);
+      $("#click").trigger("click");
+    })
+  $("#paramschargescoop").on("keyup change", function() {
+      params.chargescoop = this.value;
+      fromht(resultats.ht);
+      $("#click").trigger("click");
+    })
+ $("#paramstauxhoraire").on("keyup change", function() {
+      params.tauxhoraire = this.value;
+      fromht(resultats.ht);
+      $("#click").trigger("click");
+    })
 
 //______________________________________Tests
 
