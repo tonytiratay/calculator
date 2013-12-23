@@ -41,10 +41,13 @@ var fromht = function(val) {
   resultats.tva = resultats.ttc - resultats.ht;
   resultats.valchargescoop = resultats.ht * (params.chargescoop/100);
   resultats.capital = resultats.ht - resultats.valchargescoop;
-  resultats.salaire = resultats.capital / (1+(params.chargessal+params.chargespat)/100);
+  resultats.charges =  (100 + parseInt(params.chargessal) + parseInt(params.chargespat)) / 100;
+  resultats.salaire = resultats.capital / resultats.charges;
   resultats.chargessal = resultats.salaire * (params.chargessal / 100);
   resultats.chargespat = resultats.salaire * (params.chargespat / 100);
   resultats.heurestravail = resultats.salaire / params.tauxhoraire;
+  
+  
 }
 
 
@@ -54,8 +57,7 @@ var fromttc = function(ttc) {
   }
 
 var fromtva = function(tva) {
-  resultats.ttc = (tva / params.tva) * 100;
-  resultats.ht = fromttc(resultats.ttc);
+  resultats.ht = (tva / params.tva) * 100;
   return resultats.ht;
   }
 
@@ -70,21 +72,21 @@ var fromcapital = function(capital) {
   }
 
 var fromchargessal = function(charge) {
-  resultats.salaire = charge / 0.28;
-  resultats.capital = 1.82 * resultats.salaire;
+  resultats.salaire = charge / (params.chargessal / 100);
+  resultats.capital = resultats.charges * resultats.salaire;
   resultats.ht = params.chargescoop * resultats.capital / 9;
   return resultats.ht;
   }
 
 var fromchargespat = function(charge) {
-  resultats.salaire = charge / 0.54;
-  resultats.capital = 1.82 * resultats.salaire;
+  resultats.salaire = charge / (params.chargespat / 100);
+  resultats.capital = resultats.charges * resultats.salaire;
   resultats.ht = params.chargescoop * resultats.capital / 9;
   return resultats.ht;
   }
 
 var fromsalaire = function(salaire) {
-  resultats.capital = 1.82 * (salaire * params.moispardefaut);
+  resultats.capital = resultats.charges * (salaire * params.moispardefaut);
   resultats.ht = params.chargescoop * resultats.capital / 9;
   return resultats.ht;
   }
@@ -106,6 +108,9 @@ var fromsalaire = function(salaire) {
       $("#paramschargessal").val(rounded(params.chargessal));
       $("#paramsheurestravail").val(rounded(resultats.heurestravail));      
       $(".resultat").text("Soit " + (rounded(resultats.heurestravail)) + " heures travaillées pour " + rounded(params.tauxhoraire) + "€ (net) de l'heure.");
+      console.log('Sal: ' + params.chargessal);
+      console.log('Pat: ' + params.chargespat);
+      console.log('Total: ' + resultats.charges);
 })
  
 

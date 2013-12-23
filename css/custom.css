@@ -21,7 +21,7 @@ body {
 .container {
 	max-width: 960px;
 	margin:auto;
-	padding: 0;
+	padding: 10px;
 	background: #F3F3F3;
     /*border: 1px solid #B7B7B7;*/
     -webkit-box-shadow:  0px 0px 15px 4px rgba(0, 0, 0, 0.3);
