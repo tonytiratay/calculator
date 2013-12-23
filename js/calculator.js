@@ -19,7 +19,7 @@ $( ".switch-more" ).slideToggle( "slow", function() {
 });
 
 var rounded = function(value){ // Arrondi automatiquement chaque élément de l'array a x chiffres après la virgule
-    return Math.round(value);
+    return (Math.round(value * 100)/100);
     //return value;//.toFixed(2)
     
 }
@@ -92,8 +92,6 @@ var fromsalaire = function(salaire) {
 
 //_____________________________________events
  $("#click").on("click", function() {
-     console.log(params);
-     console.log(resultats);
       $("#ht").val(rounded(resultats.ht));
       $("#ttc").val(rounded(resultats.ttc));
       $("#capital").val(rounded(resultats.capital));
