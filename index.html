@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CAWA | Calculator</title>
     <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.0.min.css" />
     <link rel="stylesheet" href="css/custom.css" />
     <script src="js/modernizr.js"></script>
 
@@ -28,13 +29,18 @@
   <li>
     <small>Valeur TVA</small>
     <div> 
-    <input type="number" id="paramstva" placeholder="Valeur TVA"> 
+    <select id="paramstva" name="paramstva" data-mini="true">
+        <option value="0">0</option>
+        <option value="5.5">5.5</option>
+        <option value="7">7</option>
+        <option value="19.6" selected="selected">19.6</option>
+    </select> 
     </div> 
   </li>
   <li>
     <small>Taux horaire</small>
     <div> 
-    <input type="number" id="paramstauxhoraire" placeholder="Taux horaire (net)"> 
+      <input type="number" id="paramstauxhoraire" placeholder="Heures travaillées"> 
     </div> 
   </li>
   <li>
@@ -46,19 +52,19 @@
   <li>
     <small>Cotisations Cooperative</small>
     <div> 
-    <input type="number" id="paramschargescoop" placeholder="Charges supplémentaires (%)"> 
+    <input type="range" name="slider-fill" id="paramschargescoop" value="10" min="0" max="100" data-highlight="true" data-mini="true"/>
     </div> 
   </li>
   <li>
     <small>Cotisations patronales</small>
     <div> 
-    <input type="number" id="paramschargespat" placeholder="Charges patronales">
+    <input type="range" name="slider-fill" id="paramschargespat" value="54" min="0" max="100" data-highlight="true" data-mini="true"/>
     </div> 
   </li>
   <li>
     <small>Cotisations salariales</small>
     <div> 
-    <input type="number" id="paramschargessal" placeholder="Charges salariales"> 
+    <input type="range" name="slider-fill" id="paramschargessal" value="28" min="0" max="100" data-highlight="true" data-mini="true" />
     </div> 
   </li>
   
@@ -116,14 +122,14 @@
 <div class="switch-more"> 
     <div class="row">
         <div id="box-chargespat">
-            <div class=" large-2 small-5 columns titre"><small>Dépenses patronnales</small></div>
+            <div class=" large-2 small-5 columns"><small>Dépenses patronnales</small></div>
             <div class ="large-10 small-7 columns" ><input type="number" id="chargespat" placeholder="100"></div>
         </div>
     </div>
 
      <div class="row">       
         <div id="box-chargessal">
-            <div class="large-2 small-5 columns titre"><small>Dépenses salariales</small></div>
+            <div class="large-2 small-5 columns"><small>Dépenses salariales</small></div>
             <div class ="large-10 small-7 columns"><input type="number" id="chargessal" placeholder="0"></div>
         </div>
       </div>
@@ -137,7 +143,7 @@
 
       <div class="row">       
         <div id="box-tva">
-            <div class="large-2 small-5 columns titre"><small>Dépenses TVA</small> <br/></div>
+            <div class="large-2 small-5 columns"><small>Dépenses TVA</small> <br/></div>
             <div class ="large-10 small-7 columns"><input type="number" id="tva" placeholder="0"></div>
         </div>
       </div>
@@ -157,9 +163,9 @@
 
 
     <script src="js/jquery.js"></script>
-    <script src="js/calculator.js"></script>
-    <!--<script src="js/calculator.js"></script>-->
+    <script src="js/jquery.mobile-1.4.0.min.js"></script>
     <script src="js/foundation.min.js"></script>
+    <script src="js/calculator.js"></script>
     <script>
       $(document).foundation();
     </script>
