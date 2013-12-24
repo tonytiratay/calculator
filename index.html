@@ -1,10 +1,9 @@
 <!doctype html>
-<html class="no-js" lang="fr">
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CAWA | Calculator</title>
-    <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/jquery.mobile-1.4.0.min.css" />
     <link rel="stylesheet" href="css/custom.css" />
     <script src="js/modernizr.js"></script>
@@ -19,94 +18,79 @@
 
 <div class="container">
 <div class="menu">
-<a href="#" id="togglebutton" class="button small secondary"><img src="img/options.png" width="30" height="30"></a>
-<h1>Super Calculator</h1>
+<a href="#" id="togglebutton"><img src="img/options.png" width="45" height="45"></a>
+<a href="#" id="togglebuttonmore"><img src="img/plus.png" width="45" height="45"></a>
+<h1>CAWA TOOLS</h1>
 
 </div>
 
-<div class=" row switch">
-<ul class="small-block-grid-1 large-block-grid-3">
-  <li>
-    <small>Valeur TVA</small>
+<div class=" switch">
+
+    <small>Valeur TVA ( % )</small>
     <div> 
-    <select id="paramstva" name="paramstva" data-mini="true">
+    <select id="paramstva" name="paramstva"  >
         <option value="0">0</option>
         <option value="5.5">5.5</option>
         <option value="7">7</option>
         <option value="19.6" selected="selected">19.6</option>
     </select> 
     </div> 
-  </li>
-  <li>
+  
     <small>Taux horaire</small>
     <div> 
-      <input type="number" id="paramstauxhoraire" placeholder="Heures travaillées"> 
+      <input type="number" id="paramstauxhoraire" placeholder="Heures travaillées" > 
     </div> 
-  </li>
-  <li>
+  
     <small>Heures travaillées</small>
     <div> 
-    <input type="number" id="paramsheurestravail" placeholder="Heures travaillées"> 
+    <input type="number" id="paramsheurestravail" placeholder="Heures travaillées" > 
     </div> 
-  </li>
-  <li>
-    <small>Cotisations Cooperative</small>
-    <div> 
-    <input type="range" name="slider-fill" id="paramschargescoop" value="10" min="0" max="100" data-highlight="true" data-mini="true"/>
-    </div> 
-  </li>
-  <li>
-    <small>Cotisations patronales</small>
-    <div> 
-    <input type="range" name="slider-fill" id="paramschargespat" value="54" min="0" max="100" data-highlight="true" data-mini="true"/>
-    </div> 
-  </li>
-  <li>
-    <small>Cotisations salariales</small>
-    <div> 
-    <input type="range" name="slider-fill" id="paramschargessal" value="28" min="0" max="100" data-highlight="true" data-mini="true" />
-    </div> 
-  </li>
   
-</ul>
+    <small>Cotisations Cooperative ( % )</small>
+    <div> 
+    <input type="range" name="slider-fill" id="paramschargescoop" value="10" min="0" max="100" data-highlight="true" data-track-theme="b" data-theme="b" />
+    </div> 
+  
+    <small>Cotisations patronales ( % )</small>
+    <div> 
+    <input type="range" name="slider-fill" id="paramschargespat" value="54" min="0" max="100" data-highlight="true" data-track-theme="b" data-theme="b" />
+    </div> 
+  
+    <small>Cotisations salariales ( % )</small>
+    <div> 
+    <input type="range" name="slider-fill" id="paramschargessal" value="28" min="0" max="100" data-highlight="true" data-track-theme="b" data-theme="b"  />
+    </div> 
+  
  
 
 
 </div>
 
 
-    <div class="row base">
-        <div id="box-ht">
-            <div class=" large-2 small-5 columns titre">HT</div>
-            <div class ="large-10 small-7 columns" ><input type="number" id="ht" placeholder="Taper un montant"></div>
-        </div>
-    </div>
+    <div class="base">
+        
+            <div class="titre">HT</div>
+            <div><input type="number" id="ht" placeholder="Taper un montant"></div>
+        
+    
 
-     <div class="row">       
-        <div id="box-ttc">
-            <div class="large-2 small-5 columns titre">TTC</div>
-            <div class ="large-10 small-7 columns"><input type="number" id="ttc" placeholder="Taper un montant"></div>
-        </div>
+     
+            <div class="titre">TTC</div>
+            <div><input type="number" id="ttc" placeholder="Taper un montant"></div>
+        
+
+      
+            <div class="titre">Capital</div>
+            <div><input type="number" id="capital" placeholder="Taper un montant"></div>
+        
+            <div class="titre">Salaire - 1 mois</div>
+            <div><input type="number" id="salaire" placeholder="Taper un montant"></div>
+        
       </div>
-
-      <div class="row">       
-        <div id="box-capital">
-            <div class="large-2 small-5 columns titre">Capital</div>
-            <div class ="large-10 small-7 columns"><input type="number" id="capital" placeholder="Taper un montant"></div>
-        </div>
-      </div>
-
-      <div class="row">       
-        <div id="box-salaire">
-            <div class="large-2 small-5 columns titre">Salaire<br/><small>1 mois</small></div>
-            <div class ="large-10 small-7 columns"><input type="number" id="salaire" placeholder="Taper un montant"></div>
-        </div>
-      </div>
-
-      <div class="menumore">
-      <a href="#" id="togglebuttonmore" class="button small secondary"><img src="img/plus.png" width="30" height="30"></a>
-    <div class="resultat">Entrer une valeur pour lancer le simulateur</div><br/><br/>
-    </div>
+      
+      <div id="click" style=" height:0px; visibility:hidden;"></div><br/>
+    <div class="resultat">Entrer une valeur pour lancer le simulateur</div><br/>
+   
 
 
 
@@ -122,15 +106,15 @@
 <div class="switch-more"> 
     <div class="row">
         <div id="box-chargespat">
-            <div class=" large-2 small-5 columns"><small>Dépenses patronnales</small></div>
-            <div class ="large-10 small-7 columns" ><input type="number" id="chargespat" placeholder="100"></div>
+            <div><small>Cotisations patronnales</small></div>
+            <div><input type="number" id="chargespat" placeholder="100"></div>
         </div>
     </div>
 
      <div class="row">       
         <div id="box-chargessal">
-            <div class="large-2 small-5 columns"><small>Dépenses salariales</small></div>
-            <div class ="large-10 small-7 columns"><input type="number" id="chargessal" placeholder="0"></div>
+            <div><small>Cotisations salariales</small></div>
+            <div><input type="number" id="chargessal" placeholder="0"></div>
         </div>
       </div>
 
@@ -143,8 +127,8 @@
 
       <div class="row">       
         <div id="box-tva">
-            <div class="large-2 small-5 columns"><small>Dépenses TVA</small> <br/></div>
-            <div class ="large-10 small-7 columns"><input type="number" id="tva" placeholder="0"></div>
+            <div><small>Cotisations TVA</small> <br/></div>
+            <div><input type="number" id="tva" placeholder="0"></div>
         </div>
       </div>
 </div>
@@ -152,10 +136,8 @@
 
 
 
-
-
 </div> <!-- Fin div container -->
-<button id="click" style="visibility:hidden;">GO</button>
+
 
 
 <!-- _________________________APPEL SCRIPTS_________________________________________-->
@@ -164,7 +146,6 @@
 
     <script src="js/jquery.js"></script>
     <script src="js/jquery.mobile-1.4.0.min.js"></script>
-    <script src="js/foundation.min.js"></script>
     <script src="js/calculator.js"></script>
     <script>
       $(document).foundation();

@@ -8,6 +8,7 @@ $( ".switch" ).slideToggle( "fast", function() {// AUTO Ouvre et ferme les fonct
 $( ".switch-more" ).slideToggle( "fast", function() {// AUTO Ouvre et ferme les infos supplémentaires
 });
 
+
 $( "#togglebutton" ).click(function() { // Ouvre et ferme les fonctions avancées
 $( ".switch" ).slideToggle( "slow", function() {
 });
