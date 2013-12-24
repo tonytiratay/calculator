@@ -3,11 +3,11 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "com.cawa.calculator"
         versionCode = "10" 
-        version     = "1.0.0" >
+        version     = "1.1.0" >
 
     <!-- versionCode is optional and Android only -->
 
-    <name>Super Calculator</name>
+    <name>CAWA TOOLS</name>
 
     <description>
         Quick calculations for entrepreneurs 
@@ -18,7 +18,6 @@
     </author>
 
     <preference name="orientation" value="portrait" />
-    <preference name="splash-screen-duration" value="9000"/> 
     <icon src="icon.png" />
     <gap:splash src="splash.png" />
 

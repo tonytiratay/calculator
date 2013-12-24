@@ -12,6 +12,13 @@ body {
 	background: #4AB74E;*/
 }
 
+.ui-page {
+	min-height: 100%;
+	background: url(../img/fond.jpg) no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
 .top-bar {
 
 }
