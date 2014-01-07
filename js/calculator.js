@@ -27,7 +27,7 @@ var rounded = function(value){ // Arrondi automatiquement chaque élément de l'
 //________________________________Initialisation des variables et fonctions de calcul
 	
 var params = {};
-  params.tva = 19.6;
+  params.tva = 20;
   params.tauxhoraire = 25;
   params.chargescoop = 10;
   params.chargespat = 54;
@@ -53,7 +53,7 @@ var fromht = function(val) {
 
 
 var fromttc = function(ttc) {
-  resultats.ht = ttc * (100 / (100 + params.tva));
+  resultats.ht = ttc * (100 / (100 + parseFloat(params.tva)));
   return resultats.ht;
   }
 
@@ -109,9 +109,7 @@ var fromsalaire = function(salaire) {
       $("#paramschargessal").val(rounded(params.chargessal));
       $("#paramsheurestravail").val(rounded(resultats.heurestravail));      
       $(".resultat").text("Soit " + (rounded(resultats.heurestravail)) + " heures travaillées pour " + rounded(params.tauxhoraire) + "€ (net) de l'heure.");
-      console.log('Sal: ' + params.chargessal);
-      console.log('Pat: ' + params.chargespat);
-      console.log('Total: ' + resultats.charges);
+      
 })
  
 
@@ -168,6 +166,7 @@ var fromsalaire = function(salaire) {
       params.tva = this.value;
       fromht(resultats.ht);
       $("#click").trigger("click");
+      console.log(resultats.ttc * (100 / (100 + parseInt(params.tva))));
     })
  $("#paramschargessal").on("keyup change", function() {
       params.chargessal = this.value;
@@ -200,7 +199,7 @@ var fromsalaire = function(salaire) {
 //______________________________________Tests
 
 
-console.log(params.tva);
+
 
 });
 
