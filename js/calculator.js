@@ -63,32 +63,32 @@ var fromtva = function(tva) {
   }
 
 var fromchargescoop = function(chargescoop) {
-  resultats.ht = 10 * chargescoop;
+  resultats.ht = params.chargescoop * chargescoop;
   return resultats.ht;
   }
 
 var fromcapital = function(capital) {
-  resultats.ht = params.chargescoop * capital / 9;
+  resultats.ht = parseInt(capital) + parseInt(params.chargescoop * 10);
   return resultats.ht;
   }
 
 var fromchargessal = function(charge) {
   resultats.salaire = charge / (params.chargessal / 100);
   resultats.capital = resultats.charges * resultats.salaire;
-  resultats.ht = params.chargescoop * resultats.capital / 9;
+  resultats.ht = parseInt(resultats.capital) + parseInt(params.chargescoop * 10);
   return resultats.ht;
   }
 
 var fromchargespat = function(charge) {
   resultats.salaire = charge / (params.chargespat / 100);
   resultats.capital = resultats.charges * resultats.salaire;
-  resultats.ht = params.chargescoop * resultats.capital / 9;
+  resultats.ht = parseInt(resultats.capital) + parseInt(params.chargescoop * 10);
   return resultats.ht;
   }
 
 var fromsalaire = function(salaire) {
   resultats.capital = resultats.charges * (salaire * params.moispardefaut);
-  resultats.ht = params.chargescoop * resultats.capital / 9;
+  resultats.ht = parseInt(resultats.capital) + parseInt(params.chargescoop * 10);
   return resultats.ht;
   }
 
