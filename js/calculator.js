@@ -2,37 +2,29 @@ $(document).ready(function() {
 
 //________________________________Système
 
-
-$( ".switch" ).slideToggle( "fast", function() {// AUTO Ouvre et ferme les fonctions avancées
-});
-$( ".switch-more" ).slideToggle( "fast", function() {// AUTO Ouvre et ferme les infos supplémentaires
-});
-
+$( ".switch, .switch-more" ).slideToggle("fast");
 
 $( "#togglebutton" ).click(function() { // Ouvre et ferme les fonctions avancées
-$( ".switch" ).slideToggle( "slow", function() {
-});
+  $( ".switch" ).slideToggle( "slow");
 });
 
 $( "#togglebuttonmore" ).click(function() {// Ouvre et ferme les infos supplémentaires
-$( ".switch-more" ).slideToggle( "slow", function() {
-});
+  $( ".switch-more" ).slideToggle( "slow");
 });
 
 var rounded = function(value){ // Arrondi automatiquement chaque élément de l'array a x chiffres après la virgule
     return (Math.round(value * 100)/100);
-    //return value;//.toFixed(2)
-    
 }
 //________________________________Initialisation des variables et fonctions de calcul
 	
-var params = {};
-  params.tva = 20;
-  params.tauxhoraire = 25;
-  params.chargescoop = 10;
-  params.chargespat = 54;
-  params.chargessal = 28;
-  params.moispardefaut = 1;
+var params = {
+  tva: 20,
+  tauxhoraire: 25,
+  chargescoop: 10,
+  chargespat: 54,
+  chargessal: 28,
+  moispardefaut: 1
+}
 
 var resultats = {};
 
@@ -113,21 +105,22 @@ var fromsalaire = function(salaire) {
 })
  
 
- $("#ht").on("keyup change", function() {
+ $("#ht").on("keyup", function(e) {
       val = this.value;
+      console.log(val);
       fromht(val);
       resultats.ht =  val;
       $("#click").trigger("click");
     })
 
- $("#ttc").on("keyup change", function() {
+ $("#ttc").on("keyup", function() {
       val = this.value;
       fromht(fromttc(val));
       resultats.ttc = val;
       $("#click").trigger("click");
     })
 
- $("#capital").on("keyup change", function() {
+ $("#capital").on("keyup", function() {
       val = this.value;
       fromht(fromcapital(val));
       resultats.capital = val;
