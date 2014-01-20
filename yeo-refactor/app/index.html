@@ -1,0 +1,183 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>yeo refactor</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/custom.css">
+        <!-- endbuild -->
+        <script src="bower_components/modernizr/modernizr.js"></script>
+
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+
+
+
+<!-- _________________________FORMULAIRE_________________________________________-->
+
+
+<div class="container">
+<div class="menu">
+<a href="#" id="togglebutton"><img src="images/options.png" width="45" height="45"></a>
+<a href="#" id="togglebuttonmore"><img src="images/plus.png" width="45" height="45"></a>
+<h1>CAWA TOOLS</h1>
+
+</div>
+
+<div class=" switch">
+
+    <small>Valeur TVA ( % )</small>
+    <div> 
+    <select id="paramstva" name="paramstva"  >
+        <option value="5.5">5.5</option>
+        <option value="7">7</option>
+        <option value="20" selected="selected">20</option>
+    </select> 
+    </div> 
+  
+    <small>Taux horaire</small>
+    <div> 
+      <input type="number" id="paramstauxhoraire" placeholder="Heures travaillées" > 
+    </div> 
+  
+    <small>Heures travaillées</small>
+    <div> 
+    <input type="number" id="paramsheurestravail" placeholder="Heures travaillées" > 
+    </div> 
+  
+    <small>Cotisations Cooperative ( % )</small>
+    <div> 
+    <input type="range" name="slider-fill" id="paramschargescoop" value="10" min="0" max="100" data-highlight="true" data-track-theme="b" data-theme="b" />
+    </div> 
+  
+    <small>Cotisations patronales ( % )</small>
+    <div> 
+    <input type="range" name="slider-fill" id="paramschargespat" value="54" min="0" max="100" data-highlight="true" data-track-theme="b" data-theme="b" />
+    </div> 
+  
+    <small>Cotisations salariales ( % )</small>
+    <div> 
+    <input type="range" name="slider-fill" id="paramschargessal" value="28" min="0" max="100" data-highlight="true" data-track-theme="b" data-theme="b"  />
+    </div> 
+  
+ 
+
+
+</div>
+
+
+    <div class="base">
+        
+            <div class="titre">HT</div>
+            <div><input type="number" id="ht" placeholder="Taper un montant"></div>
+        
+    
+
+     
+            <div class="titre">TTC</div>
+            <div><input type="number" id="ttc" placeholder="Taper un montant"></div>
+        
+
+      
+            <div class="titre">Capital</div>
+            <div><input type="number" id="capital" placeholder="Taper un montant"></div>
+        
+            <div class="titre">Salaire - 1 mois</div>
+            <div><input type="number" id="salaire" placeholder="Taper un montant"></div>
+        
+      </div>
+      
+      <div id="click" style=" height:0px; visibility:hidden;"></div><br/>
+    <div class="resultat">Entrer une valeur pour lancer le simulateur</div><br/>
+   
+
+
+
+
+
+
+
+
+<!-- _______________________________________________modal________________________________________-->
+
+
+
+<div class="switch-more"> 
+    <div class="row">
+        <div id="box-chargespat">
+            <div><small>Cotisations patronnales</small></div>
+            <div><input type="number" id="chargespat" placeholder="100"></div>
+        </div>
+    </div>
+
+     <div class="row">       
+        <div id="box-chargessal">
+            <div><small>Cotisations salariales</small></div>
+            <div><input type="number" id="chargessal" placeholder="0"></div>
+        </div>
+      </div>
+
+      <!-- <div class="row">       
+        <div id="box-capital">
+            <div class="large-2 small-12 columns titre">Capital</div>
+            <div class ="large-10 small-12 columns"><input type="number" id="capital" placeholder="0"></div>
+        </div>
+      </div> -->
+
+      <div class="row">       
+        <div id="box-tva">
+            <div><small>Cotisations TVA</small> <br/></div>
+            <div><input type="number" id="tva" placeholder="0"></div>
+        </div>
+      </div>
+</div>
+
+
+
+
+</div> <!-- Fin div container -->
+
+
+
+<!-- _________________________APPEL SCRIPTS_________________________________________-->
+
+
+<!-- 
+    <script>
+      $(document).foundation();
+    </script>
+ -->
+
+        <!-- build:js scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/jquery-mobile/js/jquery.mobile.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- build:js scripts/main.js -->
+        <script src="scripts/calculator.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js scripts/plugins.js -->
+
+        <!-- endbuild -->
+</body>
+</html>
